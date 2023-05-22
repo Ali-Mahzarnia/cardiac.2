@@ -60,6 +60,9 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, echo = FALSE, fig.height=4,
 
 #data<-read_excel("/Users/alex/AlexBadea_MyCode/nariman_ali/cardiac-main/combined/Cardiac_LV_results_01132023.xlsx")
 data<-read.csv("LV_results_04212023_CNN.csv")
+data$Diastolic_LV_Volume = data$Diastolic_LV_Volume * (0.125^3)/1000
+data$Systolic_LV_Volume = data$Systolic_LV_Volume * (0.125^3)/1000
+
 outpath='output/'
 
 
