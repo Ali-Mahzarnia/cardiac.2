@@ -419,8 +419,8 @@ plot_list[[j]]<-ggplot(data, aes(x=Geno3, y=unlist(data[,i]), fill = Sex, alpha=
   facet_grid( Sex~Diet)+
   #facet_wrap(~Diet) +
   scale_alpha_discrete(range = c(0.4,0.8)) +
-  geom_boxplot(color="black", outlier.color="black", width=0.2, alpha=.8, position=dodge) +
-  geom_dotplot(binaxis='y', stackdir='center', dotsize=2, alpha=0.6, position=dodge)+
+  geom_boxplot(color="black", outlier.color="black", width=0.3, alpha=0.6, position=dodge) +
+  geom_dotplot(binaxis='y', stackdir='center', dotsize=1.5, alpha=0.6, position=dodge)+
   #geom_jitter(size = 0.1, height = 0, width = 0.1, aes(color = Sex)) + 
   labs(title = "VOL")+
   theme_minimal()+
@@ -461,8 +461,8 @@ plot_list[[(i-7)]]<-ggplot(data, aes(x=Geno3, y=unlist(data[,i]), fill = HN, alp
   #facet_grid( Sex~Diet)+
   #facet_wrap(~Diet) +
   scale_alpha_discrete(range = c(0.4,0.8)) +
-  geom_boxplot(color="black", outlier.color="black", width=0.2, alpha=.8, position=dodge) +
-  geom_dotplot(binaxis='y', stackdir='center', dotsize=1.5, alpha=0.6, position=dodge)+
+  geom_boxplot(color="black", outlier.color="black", width=0.4, alpha=.6, position=dodge) +
+  geom_dotplot(binaxis='y', stackdir='center', stackratio = 0.7, dotsize=1, alpha=0.6, position=dodge)+
   #geom_jitter(size = 0.1, height = 0, width = 0.1, aes(color = Sex)) + 
   labs(title = "VOL")+
   theme_minimal()+
@@ -503,15 +503,15 @@ for (i in c(8:15,19,20,21)) {
 
 
   plot_list[[j]]=ggplot(data, aes(x=Geno3, y=unlist(data[,i]), fill = Diet, alpha=Diet)) +
-  geom_violin(inherit.aes=TRUE,position=dodge) +
+geom_violin(inherit.aes=TRUE,position=dodge) +
   scale_color_manual(values=mycolors)+
   scale_fill_manual(values=mycolors)+
-  ##facet_grid(. ~ Sex)  +
+  facet_grid(. ~ Diet)  +
   #facet_grid( Sex~Diet)+
   #facet_wrap(~Diet) +
   scale_alpha_discrete(range = c(0.4,0.8)) +
-  geom_boxplot(color="black", outlier.color="black", width=0.2, alpha=.8, position=dodge) +
-  geom_dotplot(binaxis='y', stackdir='center', dotsize=2, alpha=0.6, position=dodge)+
+  geom_boxplot(color="black", outlier.color="black", width=0.3, alpha=.6, position=dodge) +
+  geom_dotplot(binaxis='y', stackdir='center', stackratio = 0.7, dotsize=1, alpha=0.6, position=dodge)+
   #geom_dotplot(binaxis='y', stackdir='center', dotsize=1, alpha=0.5, position=dodge)+
   #geom_jitter(size = 0.1, height = 0, width = 0.1, aes(color = Sex)) + 
   labs(title = "Genotype")+
@@ -551,16 +551,16 @@ for (i in c(8:15,19,20,21)) {
 
 
 
-  plot_list[[j]]=ggplot(data, aes(x=Sex, y=unlist(data[,i]), fill = Sex)) +
+  plot_list[[j]]=ggplot(data, aes(x=Sex, y=unlist(data[,i]), fill = Sex, alpha= Sex)) +
   geom_violin(inherit.aes=TRUE,position=dodge) +
   scale_color_manual(values=mycolors)+
   scale_fill_manual(values=mycolors)+
-  ##facet_grid(. ~ Sex)  +
+  facet_grid(. ~ Diet)  +
   #facet_grid( Sex~Diet)+
   #facet_wrap(~Diet) +
   scale_alpha_discrete(range = c(0.4,0.8)) +
-  geom_boxplot(color="black", outlier.color="black", width=0.2, alpha=.8, position=dodge) +
-  geom_dotplot(binaxis='y', stackdir='center', dotsize=2, alpha=0.6, position=dodge)+
+  geom_boxplot(color="black", outlier.color="black", width=0.3, alpha=.6, position=dodge) +
+  geom_dotplot(binaxis='y', stackdir='center', stackratio = 0.7, dotsize=1, alpha=0.6, position=dodge)+
   #geom_dotplot(binaxis='y', stackdir='center', dotsize=1, alpha=0.5, position=dodge)+
   #geom_jitter(size = 0.1, height = 0, width = 0.1, aes(color = Sex)) + 
   labs(title = "Sex")+
@@ -592,16 +592,16 @@ for (i in c(8:15,19,20,21)) {
 
 
 
-  plot_list[[j]]=ggplot(data, aes(x=Geno3, y=unlist(data[,i]), fill = Geno3)) +
+  plot_list[[j]]=ggplot(data, aes(x=Geno3, y=unlist(data[,i]), fill = Geno3, alpha= Geno3)) +
   geom_violin(inherit.aes=TRUE,position=dodge) +
   scale_color_manual(values=mycolors)+
   scale_fill_manual(values=mycolors)+
-  ##facet_grid(. ~ Sex)  +
+  facet_grid(. ~ Diet)  +
   #facet_grid( Sex~Diet)+
   #facet_wrap(~Diet) +
   scale_alpha_discrete(range = c(0.4,0.8)) +
-  geom_boxplot(color="black", outlier.color="black", width=0.2, alpha=.8, position=dodge) +
-  geom_dotplot(binaxis='y', stackdir='center', dotsize=2, alpha=0.6, position=dodge)+
+  geom_boxplot(color="black", outlier.color="black", width=0.3, alpha=.6, position=dodge) +
+  geom_dotplot(binaxis='y', stackdir='center', stackratio = 0.7, dotsize=1, alpha=0.6, position=dodge)+
   #geom_dotplot(binaxis='y', stackdir='center', dotsize=1, alpha=0.5, position=dodge)+
   #geom_jitter(size = 0.1, height = 0, width = 0.1, aes(color = Sex)) + 
   labs(title = "Genotype")+
